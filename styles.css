@@ -1,0 +1,22 @@
+body {
+	font-family: sans-serif;
+	margin: 1rem;
+}
+
+section {
+	margin: 4rem 0;
+}
+
+h2 {
+	text-align: center;
+}
+
+button {
+	font-size: x-large;
+	border: 3px solid;
+	border-radius: 4px;
+	display: block;
+	width: 100%;
+	line-height: 2;
+	margin: 0.5rem 0;
+}
