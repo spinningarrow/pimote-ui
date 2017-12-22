@@ -4,7 +4,7 @@ body {
 }
 
 section {
-	margin: 4rem 0;
+	margin: 0 0 4rem;
 }
 
 h2 {
@@ -13,8 +13,9 @@ h2 {
 
 button {
 	font-size: x-large;
-	border: 3px solid;
-	border-radius: 4px;
+	background: hsl(894, 59%, 48%);
+	border-radius: 10px;
+	color: hsl(41, 80%, 98%);
 	display: block;
 	width: 100%;
 	line-height: 2;
