@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000'
+const API_URL = `http://${location.hostname}:3000`
 
 const triggerAction = (device, action) =>
 	fetch(`${API_URL}/devices/${device}/actions/${action}/executions`)
