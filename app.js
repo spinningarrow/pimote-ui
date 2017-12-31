@@ -6,12 +6,14 @@ const triggerAction = (device, action) =>
 		.then(console.log)
 
 const Action = (device, action) => `
-	<button onclick="triggerAction('${device}', '${action}')">${action}</button>
+	<button onclick="triggerAction('${device}', '${action}')" data-action="${action}">
+		${action.replace(/-/g, ' ')}
+	</button>
 `
 
 const Device = ({ name, actions }) => `
 	<h2>${name}</h2>
-	${actions.map(Action.bind(null, name)).join('')}
+	<div class="actions">${actions.map(Action.bind(null, name)).join('')}</div>
 `
 
 const App = data => `
