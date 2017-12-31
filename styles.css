@@ -1,20 +1,63 @@
+html {
+	font-size: 24px;
+}
+
 body {
 	font-family: sans-serif;
-	margin: 1rem;
+	margin: 0;
 }
 
-section {
-	margin: 0 0 4rem;
-}
-
-h2 {
+main::after {
+	color: #ccc;
+	content: 'Choose a device to see its actions';
+	left: 0;
+	margin: 0 2rem;
+	position: absolute;
+	right: 0;
 	text-align: center;
+	top: 50%;
+}
+
+.device {
+	box-sizing: border-box;
+	float: left;
+	text-align: center;
+	width: 50vw;
+}
+
+.device-name {
+	border: 1px solid hsl(332, 16%, 40%);
+	color: hsl(332, 16%, 40%);
+	display: block;
+	line-height: 3rem;
+	text-decoration: none;
 	text-transform: capitalize;
 }
 
+.device:first-child .device-name {
+	border-right: 0;
+}
+
+:target .device-name {
+	background: hsl(332, 16%, 40%);
+	color: hsl(41, 80%, 98%);
+}
+
 .actions {
-	display: flex;
+	background: white;
+	bottom: 0;
+	display: none;
 	flex-wrap: wrap;
+	left: 0;
+	padding: 1rem;
+	position: absolute;
+	right: 0;
+	top: 4rem;
+	z-index: 1;
+}
+
+:target .actions {
+	display: flex;
 }
 
 button {
@@ -23,9 +66,9 @@ button {
 	border: 3px double;
 	color: hsl(41, 80%, 98%);
 	flex: 1 auto;
-	font-size: x-large;
+	font-size: 1.3rem;
 	font-variant: small-caps;
-	line-height: 2;
+	line-height: 1.5;
 	margin: 0.1rem;
 }
 
@@ -33,6 +76,7 @@ button {
 	background: hsl(5, 87%, 58%);
 }
 
-[data-action*="volume"] {
+[data-action*="volume"],
+[data-action*="mute"] {
 	background: hsl(240, 17%, 42%);
 }

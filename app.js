@@ -12,8 +12,12 @@ const Action = (device, action) => `
 `
 
 const Device = ({ name, actions }) => `
-	<h2>${name}</h2>
-	<div class="actions">${actions.map(Action.bind(null, name)).join('')}</div>
+	<div class="device" id="${name}">
+		<a class="device-name" href="#${name}">${name}</a>
+		<div class="actions">
+			${actions.map(Action.bind(null, name)).join('')}
+		</div>
+	</div>
 `
 
 const App = data => `
