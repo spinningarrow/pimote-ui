@@ -27,6 +27,9 @@ const App = data => `
 const render = html =>
 	document.querySelector('main').innerHTML = html
 
+const setLoading = isLoading => () =>
+	document.querySelector('main').classList[isLoading ? 'add' : 'remove']('loading')
+
 const fetchData = async () => {
 	const devices = await fetch(`${API_URL}/devices`).then(r => r.json())
 	const actions = await Promise.all(devices.map(device =>
@@ -43,6 +46,8 @@ const fetchData = async () => {
 }
 
 
-fetchData()
+Promise.resolve(setLoading(true)())
+	.then(fetchData)
 	.then(App)
 	.then(render)
+	.then(setLoading(false))

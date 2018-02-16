@@ -18,6 +18,10 @@ main::after {
 	top: 50%;
 }
 
+main.loading::after {
+	content: 'Loading…';
+}
+
 .device {
 	box-sizing: border-box;
 	float: left;
