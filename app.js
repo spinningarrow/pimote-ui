@@ -1,7 +1,7 @@
 const API_URL = `http://${location.hostname}:3000`
 
 const triggerAction = (device, action) =>
-	fetch(`${API_URL}/devices/${device}/actions/${action}/executions`)
+	fetch(`${API_URL}/devices/${device}/actions/${action}/executions`, { method: 'POST' })
 		.then(r => r.json())
 		.then(console.log)
 
